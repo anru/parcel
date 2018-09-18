@@ -11,7 +11,8 @@
     "packages/*/*"
   ],
   "scripts": {
-    "test": "wsrun test",
+    "test": "lerna run test --stream",
+    "test-ci": "lerna run test-ci",
     "lint": "eslint . && prettier \"./packages/*/*/{src,bin,test}/**/*.{js,json,md}\" --list-different",
     "format": "prettier --write \"./packages/*/*/{src,bin,test}/**/*.{js,json,md}\"",
     "precommit": "lint-staged"
@@ -19,9 +20,9 @@
   "devDependencies": {
     "eslint": "^5.5.0",
     "husky": "^0.14.3",
+    "lerna": "^3.3.2",
     "lint-staged": "^7.2.2",
-    "prettier": "^1.14.2",
-    "wsrun": "^2.2.1"
+    "prettier": "^1.14.2"
   },
   "engines": {
     "node": ">= 6.0.0"
